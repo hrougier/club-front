@@ -27,8 +27,9 @@ const RootLayout = ({ children }: PropsWithChildren) => (
     <body className={`${helvetica.variable} antialiased`}>
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
-        enableSystem
+        // defaultTheme="system"
+        // enableSystem
+        forcedTheme="light"
         disableTransitionOnChange
       >
         {children}
