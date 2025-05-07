@@ -1,5 +1,5 @@
-import ChatInterface from "types/chats";
-import MessageInterface from "types/messages";
+import ChatInterface from "../../src/types/chats";
+import MessageInterface from "../../src/types/messages";
 import generateMessages from "./messages";
 
 const getMessagesArray = (messages: MessageInterface[], index) => {
