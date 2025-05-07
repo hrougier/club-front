@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import MessageInterface from '@/types/messages'
 import UserInterface from '@/types/users'
 import { SendIcon } from 'lucide-react'
-import { useActionState } from 'react'
+import { useActionState, useEffect, useRef } from 'react'
 import { sendMessage } from './actions'
 
 export type MessageFormProps = {
@@ -24,6 +24,23 @@ const me: UserInterface = {
 
 export const MessageForm = ({ chatId, messages, user }: MessageFormProps) => {
   const [state, formAction, pending] = useActionState(sendMessage, { messages })
+
+  const messagesEndRef = useRef<HTMLDivElement>(null)
+  const scrollToBottom = () => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView()
+    }
+  }
+
+  // scroll to bottom on mount
+  useEffect(() => {
+    scrollToBottom()
+  }, [])
+
+  // scroll to bottom whenever messages change
+  useEffect(() => {
+    scrollToBottom()
+  }, [state.messages.length])
 
   return (
     <form
@@ -45,6 +62,7 @@ export const MessageForm = ({ chatId, messages, user }: MessageFormProps) => {
             {writtenByMe && <UserAvatar user={me} />}
           </div>
         ))}
+        <div ref={messagesEndRef} />
       </div>
       <div className="flex flex-none gap-2 p-2">
         <Input name="content" placeholder="Type your message..." />
