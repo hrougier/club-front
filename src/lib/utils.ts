@@ -29,3 +29,13 @@ export function formatRelativeShortDate(dateInput: string | Date): string {
   const years = Math.floor(days / 365)
   return `${years}y`
 }
+
+const formatter = new Intl.DateTimeFormat('en-US', {
+  dateStyle: 'short',
+  timeStyle: 'short',
+})
+
+export function formatDate(dateInput: string | Date): string {
+  const date = typeof dateInput === 'string' ? new Date(dateInput) : dateInput
+  return formatter.format(date)
+}

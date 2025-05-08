@@ -1,5 +1,5 @@
 import moment from 'moment';
-import MessageInterface from '../../src/types/messages';
+import { MessageInterface } from '@/api/messages'
 
 const generateMessages = () => {
   const uarticle = new Array("The", "A", "One", "Some", "Any"); 

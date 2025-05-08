@@ -1,4 +1,4 @@
-import UserInterface from "../../src/types/users";
+import { UserInterface } from '@/api/users'
 
 const generateUsers = () => {
   const users: UserInterface[] = [

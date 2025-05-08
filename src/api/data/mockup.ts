@@ -93,7 +93,7 @@ export default {
         "message_2032",
         "message_2033",
       ],
-      lastMessage: "message_201",
+      lastMessage: "message_2033",
     },
     {
       id: "chat_3",
@@ -133,7 +133,7 @@ export default {
         "message_3031",
         "message_3032",
       ],
-      lastMessage: "message_301",
+      lastMessage: "message_3032",
     },
     {
       id: "chat_4",
@@ -173,7 +173,7 @@ export default {
         "message_5024",
         "message_5025",
       ],
-      lastMessage: "message_501",
+      lastMessage: "message_5025",
     },
     {
       id: "chat_6",
@@ -193,7 +193,7 @@ export default {
         "message_704",
         "message_705",
       ],
-      lastMessage: "message_701",
+      lastMessage: "message_705",
     },
   ],
   messages: [

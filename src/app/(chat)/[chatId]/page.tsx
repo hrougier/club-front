@@ -1,25 +1,18 @@
 import { ChatHeader } from './chat-header'
 import { ChatPanel } from './chat-panel'
+import { ChatProvider } from './chat-provider'
 import { MessageList } from './message-list'
 
-type ChatPageProps = {
-  params: Promise<{
-    chatId: string
-  }>
-}
-
-const ChatPage = async ({ params }: ChatPageProps) => {
-  const { chatId } = await params
-
-  return (
-    <div className="flex h-screen">
+const ChatPage = () => (
+  <div className="flex h-screen">
+    <ChatProvider>
       <div className="flex flex-1 flex-col">
-        <ChatHeader chatId={chatId} />
-        <MessageList chatId={chatId} />
+        <ChatHeader className="sticky top-0 z-10" />
+        <MessageList />
       </div>
-      <ChatPanel chatId={chatId} />
-    </div>
-  )
-}
+      <ChatPanel className="lg:flex hidden" />
+    </ChatProvider>
+  </div>
+)
 
 export default ChatPage

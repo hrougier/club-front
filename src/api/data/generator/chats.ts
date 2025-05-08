@@ -1,15 +1,15 @@
-import ChatInterface from "../../src/types/chats";
-import MessageInterface from "../../src/types/messages";
-import generateMessages from "./messages";
+import { ChatInterface } from '@/api/chats'
+import { MessageInterface } from '@/api/messages'
+import generateMessages from './messages'
 
 const getMessagesArray = (messages: MessageInterface[], index) => {
   return messages
-    .filter(message => message.chatId === `chat_${index}`)
-    .map(message => message.id);
-};
+    .filter((message) => message.chatId === `chat_${index}`)
+    .map((message) => message.id)
+}
 
 const generateChats = () => {
-  const messages = generateMessages();
+  const messages = generateMessages()
   const chats: ChatInterface[] = [
     {
       id: 'chat_1',
@@ -59,10 +59,10 @@ const generateChats = () => {
       isActive: false,
       messages: getMessagesArray(messages, 7),
       lastMessage: 'message_701',
-    }
-  ];
+    },
+  ]
 
-  return { chats, messages };
+  return { chats, messages }
 }
 
-export default generateChats;
+export default generateChats
