@@ -10,7 +10,7 @@ const ChatListPage = async () => {
   }
 
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center">
+    <div className="flex h-[100dvh] w-full flex-col items-center justify-center">
       <ClubLogoSvg className="fill-foreground w-[100px]" />
     </div>
   )

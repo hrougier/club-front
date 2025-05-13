@@ -28,7 +28,7 @@ export const ChatPanel = ({ className, ...props }: ChatPanelProps) => {
   return (
     <aside
       className={cn(
-        'bg-background flex h-screen w-[300px] flex-col gap-2 border-l',
+        'bg-background flex h-[100dvh] w-[300px] flex-col gap-2 border-l',
         className,
       )}
       {...props}
